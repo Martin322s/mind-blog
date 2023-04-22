@@ -1,0 +1,34 @@
+<main>
+    <div class="details-container">
+        <div class="details-container-image">
+            <img src={{image}}>
+        </div>
+        <div class="details-container-info">
+            <h2>{{title}}</h2>
+            <h3>{{category}}</h3>
+            <h3>By: {{owner}}</h3>
+           {{#if followed}}
+            <h4>Follow By: {{followed}}</h4>
+            {{else}}
+            <h4>There are no followers yet!</h4>
+            {{/if}}
+        </div>
+        <div class="details-container-content">
+            <p>{{content}}</p>
+        </div>
+        {{#if user}}
+        <div class="btn-container">
+            {{#if isOwner}}
+            <a href="/mind/details/{{_id}}/edit">Edit</a>
+            <a href="/mind/details/{{_id}}/delete">Delete</a>
+            {{else}}
+            {{#if isFollowed}}
+            <p class="follow-pub">You already follow this blog!</p>
+            {{else}}
+            <a href="/mind/details/{{_id}}/follow">Follow</a>
+            {{/if}}
+            {{/if}}
+        {{/if}}
+        </div>
+    </div>
+</main>
